@@ -26,8 +26,8 @@ let buttonGenerate = document.querySelector(".btnGenerate")
 // arrays 
 let upperCharacter = ["A","B","C","D","E","F","G","H","J","K","M","N","P","Q","R","S","T","U","V","W","X","Y","Z"];
 let lowerCharacter = ["a","b","c","d","e","f","g","h","j","k","m","n","p","q","r","s","t","u","v","w","x","y","z"];
-let numbersCharacter = ["2","3","4","5","6","7","8","9"];
-let symbolsCharacter = ["!","#","$","%","&","*","+","-","?","@"];
+let numbersCharacter = ["0","1","2","3","4","5","6","7","8","9"];
+let symbolsCharacter = ["!","#","$","%","&","*","+","-","?","@","§,","_",")","^","µ","£","/"];
 
 
 
@@ -35,7 +35,6 @@ let password = ""
 let arrayCharacter = []
 
 function getRandomPassword() {
-    console.log(lenghtPassword.value);
     if (uppercase.checked) {
         arrayCharacter = arrayCharacter.concat(upperCharacter)
     }
@@ -55,17 +54,37 @@ function getRandomPassword() {
             let randomIndex = Math.floor(Math.random() * arrayCharacter.length)
             password = password + arrayCharacter[randomIndex]
         }
-    }
+    } 
     return password
 }
 
 
 
 buttonGenerate.addEventListener("click", function () {
+    password = ""
+    if (lenghtPassword.value <= 0) {
+        document.querySelector(".lenght0").style.display = "block"
+        setTimeout(() => {
+            document.querySelector(".lenght0").style.display = "none"
+        }, 1000);
+    }
     inputPasseword.value = getRandomPassword()
 })
 
 buttonCopy.addEventListener("click", () => {
     buttonCopy.value = inputPasseword.value
-    navigator.clipboard.writeText(inputPasseword.value)  //! To copy on clipboard 
-})
+    if (inputPasseword.value == "") {
+        document.querySelector(".messageError").style.display = "block"
+        setTimeout(() => {
+            document.querySelector(".messageError").style.display = "none"
+        }, 1500);
+        return
+    }
+    navigator.clipboard.writeText(inputPasseword.value).then(() => {
+        document.querySelector(".message").style.display = "block";
+
+        setTimeout(() => {
+          document.querySelector(".message").style.display = "none";
+        }, 2000); //! Pour copier dans le ClipBoard 
+})})
+

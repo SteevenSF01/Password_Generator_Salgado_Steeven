@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./public/css/app.css">
-    <title>Document</title>
+    <title>Password Generator</title>
 </head>
+
 <body>
     <div class="container">
-        <h2 style="text-align: center; color: white ; font-family: Arial, Helvetica, sans-serif; padding-top: 10px;">Password Generator</h2>
+        <h2 style="text-align: center; color: white ; font-family: Arial, Helvetica, sans-serif; padding-top: 10px;">
+            Password Generator</h2>
         <div class="containerInput">
             <input type="" class="inputCopy">
-            <button type="button" class="buttonCopy"><i class="fa-regular fa-clipboard" style="color: #ffffff;"></i></button>
+            <button type="button" class="buttonCopy"><i class="fa-regular fa-clipboard"
+                    style="color: #ffffff;"></i></button>
         </div>
         <div class="">
             <form action="" style="display: flex; flex-direction: column; margin-top: 10px;">
-                <p>Password Lenght<input type="number" name="" id="lenght" style="cursor: pointer; width: 40px;"></p>
-                <p>Include uppercase letters<input type="checkbox" name="" id="uppercase" style="cursor: pointer; accent-color: green;"></p>
-                <p>Include lowercase letters<input type="checkbox" name="" id="lowercase" style="cursor: pointer;accent-color: green"></p>
-                <p>Include numbers<input type="checkbox" name="" id="numbers" style="cursor: pointer;accent-color: green"></p>
-                <p>Include symbols<input type="checkbox" name="" id="symbols" style="cursor: pointer;accent-color: green"></p>
+                <p>Password Lenght
+                    <input type="number" name="" id="lenght" style="cursor: pointer; width: 40px;">
+                </p>
+                <p>Include uppercase letters
+                    <input type="checkbox" name="" id="uppercase" style="cursor: pointer; accent-color: green;">
+                </p>
+                <p>Include lowercase letters
+                    <input type="checkbox" name="" id="lowercase" style="cursor: pointer;accent-color: green">
+                </p>
+                <p>Include numbers
+                    <input type="checkbox" name="" id="numbers" style="cursor: pointer;accent-color: green">
+                </p>
+                <p>Include symbols
+                    <input type="checkbox" name="" id="symbols" style="cursor: pointer;accent-color: green">
+                </p>
             </form>
         </div>
         <button class="btnGenerate">Generate Password</button>
+        <div class="message">Succesfully copied!</div>
+        <div class="messageError">Nothing to copy !</div>
+        <div class="lenght0">Choose a valid length for your password !</div>
     </div>
     <script src="./public/js/main.js"></script>
 </body>
+
 </html>
